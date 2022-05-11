@@ -48,7 +48,7 @@ def saveExcel(): #save the file so it is readable and the most important part
     for fname in filenames:
         excel = win32.gencache.EnsureDispatch('Excel.Application')
         wb = excel.Workbooks.Open(fname)
-        wb.SaveAs(fname, FileFormat = 56)   
+        wb.SaveAs(fname, FileFormat = 56)  # 56 for .xls file and 51 for .xlsx file
         wb.Close()                               
         excel.Application.Quit()
         y=parse(fname)
